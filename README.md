@@ -7,5 +7,5 @@ but moving the peg leaves a hole for light (or should i say lite) to come throug
 i thought i could improve on this by making a web based version.
 
 TO DO:
-add a list of saved drawings making it easier to load
-test on ipad and iphone to see if it works / make it work.
+\nadd a list of saved drawings making it easier to load
+\ntest on ipad and iphone to see if it works / make it work.
