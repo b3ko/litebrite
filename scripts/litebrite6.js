@@ -2,11 +2,29 @@ $(document).ready(function () {
 	
 	supports_local_storage()
 	
+	if(localStorage.name)
+	{
+		var savedArt = localStorage.name;
+		document.getElementById("list").innerText = localStorage.name.toString();
+	}
+	
 	$("#save" ).on( "click", function( event ) {
-		name = prompt("please enter a name to save your art.");
-		for(i=1;i<=240;i++)
-			localStorage[name + document.getElementById("box" + i).id] = $(document.getElementById("box" + i)).css("background-color");
-		alert("done saving");
+		var name = prompt("please enter a name to save your art.");
+		if (name != '' && name != null)
+		{
+			if(!localStorage.name)
+				localStorage.name = name;
+			else
+				localStorage.name = localStorage.name + "," + name;
+			document.getElementById("list").innerText = localStorage.name.toString();	
+			for(i=1;i<=240;i++)
+				localStorage[name + document.getElementById("box" + i).id] = $(document.getElementById("box" + i)).css("background-color");
+			alert("done saving");
+		}
+		else
+		{
+			alert("Save canceled. To save you must enter a name and click OK.");
+		}
 	});
 	
 	$("#load" ).on( "click", function( event ) {
