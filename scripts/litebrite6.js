@@ -37,6 +37,17 @@ $(document).ready(function () {
 		alert("done loading");
 	});
 	
+	$("#clear" ).on( "click", function( event ) {
+		if(confirm("Are you sure you want to clear the screen?"))
+		{
+			for(i=1;i<=240;i++)
+			{
+			color = black;
+			$(document.getElementById("box" + i)).css("background-color", color);
+			}
+		}
+	});
+	
 	function supports_local_storage() {
 		try {
 			return 'localStorage' in window && window['localStorage'] !== null;
